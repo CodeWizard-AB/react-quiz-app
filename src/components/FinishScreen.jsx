@@ -8,7 +8,7 @@ function FinishScreen() {
 	return (
 		<div>
 			<p className="result">
-				You scored {points} out of {totalScore} ({percentage}%)
+				😉 You scored {points} out of {totalScore} ({percentage}%)
 			</p>
 			<p className="highscore">HighScore: {highscore} points</p>
 			<Button type="reset">Reset Quiz</Button>

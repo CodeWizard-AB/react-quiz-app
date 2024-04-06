@@ -13,11 +13,11 @@ function Question() {
 			<div className="options">
 				{options.map((opt, i) => (
 					<button
-						key={i}
+						key={opt}
 						onClick={dispatch.bind(null, { type: "newAnswer", payload: i })}
-						className={`btn btn-option ${
+						className={`btn btn-option ${answer === i && "answer"} ${
 							answer && (i === correctOption ? "correct" : "wrong")
-						} ${answer === i && "answer"}`}
+						}`}
 						disabled={Boolean(answer)}
 					>
 						{opt}
