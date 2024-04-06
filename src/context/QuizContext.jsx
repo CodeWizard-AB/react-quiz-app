@@ -24,8 +24,17 @@ const reducer = function (state, action) {
 		case "start":
 			return { ...state, status: "active", time: 300 };
 
-		case "newAnswer":
-			return { ...state, answer: action.payload };
+		case "newAnswer": {
+			const { points, correctOption } = state.questions[state.index];
+			return {
+				...state,
+				answer: action.payload,
+				points:
+					correctOption === action.payload
+						? state.points + points
+						: state.points,
+			};
+		}
 
 		case "next":
 			return { ...state, index: state.index + 1, answer: null };
