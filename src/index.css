@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Inter:wght@100..900&display=swap");
+
 :root {
 	--color-darkest: #343a40;
 	--color-dark: #495057;
@@ -7,8 +9,6 @@
 	--color-theme: #1098ad;
 	--color-accent: #ffa94d;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Inter:wght@100..900&display=swap");
 
 * {
 	margin: 0;
@@ -64,7 +64,7 @@ img {
 h1 {
 	font-family: "Codystar", sans-serif;
 	font-size: 5.6rem;
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 h2 {
