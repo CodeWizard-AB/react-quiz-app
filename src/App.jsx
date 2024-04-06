@@ -2,9 +2,10 @@ import Header from "./components/Header";
 
 function App() {
 	return (
-		<main className="main">
+		<div className="app">
 			<Header />
-		</main>
+			<main className="main"></main>
+		</div>
 	);
 }
 
