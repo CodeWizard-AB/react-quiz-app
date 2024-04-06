@@ -7,7 +7,7 @@ function Button({ children, type }) {
 		<button
 			type="button"
 			onClick={dispatch.bind(null, { type: type })}
-			className={`btn ${(type === "next" || "finish") && "btn-ui"}`}
+			className={`btn btn-ui`}
 		>
 			{children}
 		</button>
