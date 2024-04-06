@@ -43,7 +43,13 @@ const reducer = function (state, action) {
 			return { ...state, status: "finished", answer: null };
 
 		case "reset":
-			return { ...initialState, status: "ready" };
+			return {
+				...initialState,
+				status: "ready",
+				questions: state.questions,
+				highscore:
+					state.highscore > state.points ? state.highscore : state.points,
+			};
 
 		case "tick":
 			return { ...state, time: state.time - 1 };
@@ -55,8 +61,11 @@ const reducer = function (state, action) {
 
 // eslint-disable-next-line react/prop-types
 const QuizProvider = function ({ children }) {
-	const [{ questions, status, answer, time, index, points }, dispatch] =
-		useReducer(reducer, initialState);
+	const [
+		{ questions, status, answer, time, index, points, highscore },
+		dispatch,
+	] = useReducer(reducer, initialState);
+	const totalScore = questions.reduce((sum, ques) => sum + ques.points, 0);
 
 	useEffect(() => {
 		fetch("http://localhost:3000/questions")
@@ -71,7 +80,17 @@ const QuizProvider = function ({ children }) {
 
 	return (
 		<QuizContext.Provider
-			value={{ questions, status, index, answer, dispatch, points, time }}
+			value={{
+				questions,
+				status,
+				index,
+				answer,
+				dispatch,
+				points,
+				time,
+				totalScore,
+				highscore,
+			}}
 		>
 			{children}
 		</QuizContext.Provider>

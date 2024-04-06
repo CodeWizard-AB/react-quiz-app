@@ -24,7 +24,7 @@ function App() {
 		case "active":
 			content = <Question />;
 			break;
-		case "finised":
+		case "finished":
 			content = <FinishScreen />;
 			break;
 		default:
